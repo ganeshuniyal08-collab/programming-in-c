@@ -1,40 +1,33 @@
-//Q41: Write a program to swap the first and last digit of a number.
+//Q42: Write a program to check if a number is a perfect number.
 
 /*
 Sample Test Cases:
 Input 1:
-1234
+6
 Output 1:
-4231
+Perfect number
 
 Input 2:
-1001
+10
 Output 2:
-1001
+Not perfect number
 
 */
 #include <stdio.h>
 int main(){
-    int i,b=0,c=0,d=0,e=0;
-    printf("Enter a number: ");
+    int i,b=0;
+    printf("Enter a number:");
     scanf("%d",&i);
-    b=i%10;
-    i/=10;
-    while(i!=0){
-        c=(c*10)+(i%10);
-        i/=10;
-        e++;
+    for(int n=1;n<i;n++){
+        if(i%n==0){
+            b=b+n;
+        }
     }
-    d=c%10;
-    c/=10;
-    e--;
-    while(e>0){
-        b=(b*10)+(c%10);
-        c/=10;
-        e--;
-    }
-
-    b=b*10+d;
-    printf("no. after swapping first and last digits are:%d",b);
+    if(i==b){
+            printf("Perfect number");
+        }
+    else{
+            printf("Not perfect number");
+        }
     return 0;
 }
