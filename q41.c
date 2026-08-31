@@ -15,7 +15,7 @@ Output 2:
 */
 #include <stdio.h>
 int main(){
-    int i,b=0,c=0,d=0;
+    int i,b=0,c=0,d=0,e=0;
     printf("Enter a number: ");
     scanf("%d",&i);
     b=i%10;
@@ -23,13 +23,17 @@ int main(){
     while(i!=0){
         c=(c*10)+(i%10);
         i/=10;
+        e++;
     }
     d=c%10;
     c/=10;
-    while(c!=0){
+    e--;
+    while(e>0){
         b=(b*10)+(c%10);
         c/=10;
+        e--;
     }
+
     b=b*10+d;
     printf("no. after swapping first and last digits are:%d",b);
     return 0;
