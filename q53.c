@@ -27,7 +27,7 @@ Output 1:
 */
 #include <stdio.h>
 int main(){
-    int a,b,c,d,e;
+    int a,b,c,d;
     for (a=0;a<=9;a++){
         if(a%2==0){
             for(b=0;b<=a;b++){
